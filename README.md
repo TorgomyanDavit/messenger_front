@@ -1,30 +1,38 @@
+**README.md**
+
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a project built using React, TypeScript, and Vite. It serves as a template or starter kit for developing web applications with these technologies.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To run the application locally, follow these steps:
 
-## Expanding the ESLint configuration
+1. Make sure you have Node.js installed on your machine.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. Clone this repository to your local machine:
+   ```bash
+   git clone https://github.com/TorgomyanDavit/messenger_front.git
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+3. Navigate to the project directory:
+   ```bash
+   cd project-directory
+   ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+4. Install dependencies using npm:
+   ```bash
+   npm install
+   ```
+
+## Running the Application
+
+To run the application, execute the following command:
+```bash
+npm run dev
 ```
+This command will start the development server and open the application in your default web browser at `http://localhost:3000`.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Backend Connection
+
+The application is configured to connect to a backend server running locally on port `7000`. If you have a backend running on a different port or server, you may need to update the configuration accordingly.
