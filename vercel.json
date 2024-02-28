@@ -3,8 +3,5 @@
     "name": "vite-react-vercel",
     "routes": [
       { "src": "/(.*)", "dest": "dist/index.html" }
-    ],
-    "env": {
-      "VITE_APP_BASE_URL": "@"
-    }
+    ]
 }
