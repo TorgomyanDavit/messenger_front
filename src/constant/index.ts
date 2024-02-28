@@ -1,1 +1,1 @@
-export const baseUrl = "https://messagebackend.holtrinity.com"
+export const baseUrl = "http://localhost:7000"
