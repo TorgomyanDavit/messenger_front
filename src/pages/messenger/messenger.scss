@@ -1,0 +1,150 @@
+.messenger {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    .UserMessaegTitle {
+        margin-top: 10px;
+    }
+
+    .messages {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0 10%;
+        position: relative;
+        width: 100%;
+        background: rgba(108, 118, 106, 0.159);
+        height: 380px;
+        overflow-y: scroll;
+        .message {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+            padding: 10px 0;
+            .textContent {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                .editMessage {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    font-size: 16px;
+                    background: transparent;
+                    border: none;
+                    cursor: pointer;
+                    .date {
+                        font-size: 11px;
+                    }
+                }
+
+            }
+            .userImg {
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .usersContainer {
+        display: flex;
+        justify-content: space-between;
+        margin: 50px 20px 10px;
+        .users {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .currentUser {
+            outline: 4px solid green;
+        }
+        .activeUser {
+            outline: 4px solid rgb(0, 21, 128);
+        }
+        .user {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            .userImg {
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                object-fit: contain;
+            }
+            .userMessage {
+                font-size: 16px;
+                font-weight: 900;
+            }
+            .inputMessaeg {
+                margin-top: auto;
+                margin-bottom: 100px;
+                display: flex;
+            }
+            .deletUser {
+                position: absolute;
+                right: -10px;
+                top: -20px;
+                background: transparent;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .inputMessaeg {
+        margin: auto auto 50px auto;
+        position: relative;
+        max-width: 500px;
+        width: 100%;
+        .message {
+            width: 100%;
+            border-radius: 10px;
+            outline: none;
+            padding: 15px;
+            font-size: 16px;
+            border: 1 px solid black;
+            &:focus {
+                background: rgba(0, 0, 0, 0.036);
+            }
+        }
+
+        .sendMessage {
+            position: absolute;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 30px;
+            right: 10px;
+            top: 2px;
+            bottom: 0;
+            cursor: pointer;
+        }
+        @media screen and (max-width:600px) {
+            max-width: 300px;
+        }
+    }
+
+    .logout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        border: none;
+        font-size: 16px;
+        background: transparent;
+        margin: 10px 20px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 110px;
+        svg {
+            font-size: 30px;
+        }
+    }
+}
