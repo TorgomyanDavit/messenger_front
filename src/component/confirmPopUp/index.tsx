@@ -3,11 +3,11 @@ import "./confirm.scss";
 
 interface LoadingProps {
     confirmAction: (id: string) => void; 
-    Cancel: (arg: boolean) => void;
+    Cancel: (arg: string) => void;
     id:string
 }
 
-function ConfirmOPopUp({ confirmAction, Cancel,id }: LoadingProps) {
+function ConfirmOPopUp({ confirmAction, Cancel, id }: LoadingProps) {
     return (
         <div className='confirm_dialog'>
             <p className='confirm_popUP'>Are you sure you want to delete user</p>
@@ -15,7 +15,7 @@ function ConfirmOPopUp({ confirmAction, Cancel,id }: LoadingProps) {
                 <button className='deletUserButton' onClick={() => confirmAction(id)}> 
                     confirm
                 </button>
-                <button className='deletUserButton' onClick={() => Cancel(false)}> 
+                <button className='deletUserButton' onClick={() => Cancel("")}> 
                     Cancel
                 </button>
             </div>

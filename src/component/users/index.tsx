@@ -34,7 +34,7 @@ export default function Users({usersConfig,currentUserConfig,receiverConfig}:Use
   const {receiverId,setActiveUserId} = receiverConfig
 
   const [refresh, setRefresh] = useState(true)
-  const [confirmKey, setConfirmKey] = useState(false)
+  const [confirmKey, setConfirmKey] = useState("")
 
   useEffect(() => {
     if(usersData?.length) {
@@ -62,7 +62,10 @@ export default function Users({usersConfig,currentUserConfig,receiverConfig}:Use
         method: 'DELETE',
         headers: {'Content-Type': 'application/json'},
       });
-      if (response.ok) { setRefresh(!refresh)} 
+      if (response.ok) { 
+        setConfirmKey("")
+        setRefresh(!refresh)
+      } 
     } catch(error) {console.error(error)}
   };
 
@@ -77,10 +80,10 @@ export default function Users({usersConfig,currentUserConfig,receiverConfig}:Use
             {usersData?.filter((val:usersData) => val.id !== currentUser?.id).map(({id,name,images}:usersData,) => {
                 return (
                 <div key={id} className={`user`} onClick={() => setActiveUserId(id)}>
-                    <button className='deletUser' onClick={() => setConfirmKey(true)}> 
+                    <button className='deletUser' onClick={() => setConfirmKey(id)}> 
                         <MdDelete color='red'/>
                     </button>
-                        {confirmKey && <ConfirmOPopUp confirmAction={deleteUser} Cancel={setConfirmKey} id={id}/>}
+                        {confirmKey && <ConfirmOPopUp confirmAction={deleteUser} Cancel={setConfirmKey} id={confirmKey}/>}
                         <img className={`userImg  ${receiverId === id ? 'activeUser' : ''} `} src={images}/>
                     <p className='userName'>{name}</p>
                 </div>
