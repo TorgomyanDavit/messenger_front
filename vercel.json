@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "name": "vite-react-vercel",
+    "builds": [
+      { "src": "build/index.html", "use": "@vercel/static" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "build/index.html" }
+    ],
+    "functions": { "api/index.js": { "runtime": "@vercel/node" } },
+    "env": {
+      "VITE_APP_BASE_URL": "@"
+    }
+}
